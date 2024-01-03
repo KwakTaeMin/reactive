@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7.8
+    restart: always
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: webflux_practice
+      TZ: Asia/Seoul
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/init.sql:/data/application/init.sql

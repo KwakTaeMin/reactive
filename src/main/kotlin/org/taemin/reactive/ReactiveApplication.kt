@@ -9,3 +9,4 @@ class ReactiveApplication
 fun main(args: Array<String>) {
     runApplication<ReactiveApplication>(*args)
 }
+
